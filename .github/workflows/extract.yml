@@ -16,13 +16,12 @@ jobs:
 
       - name: Extract ZIP
         run: |
-          unzip -o KashishAdvanced-v2.zip -d extracted
+          unzip -o Kashish-Advanced-v2.zip -d extracted
           cp -r extracted/*/. extracted/ 2>/dev/null || true
           find extracted -mindepth 1 -maxdepth 1 -type d -exec cp -r {}/* . \; 2>/dev/null || true
           find extracted -mindepth 1 -maxdepth 1 -type f -exec cp {} . \;
           rm -rf extracted
-          rm -f KashishAdvanced-v2.zip
-
+          rm -f Kashish-Advanced-v2.zip
       - name: Commit extracted files
         run: |
           git config user.name "github-actions"
